@@ -40,16 +40,25 @@ public class Ball : MonoBehaviour
         {
             ResetBall();
             GameManager.IncrementScore(other.GetComponent<ScoreWall>().scoringPlayer);
+            PlayAudioClip(scoreClip);
         }
         else if (other.CompareTag(tags[(int) CollisionTag.BounceWall]))
         {
             velocity.y = -velocity.y;
+            PlayAudioClip(playerClip);
         }
         else if (other.CompareTag(tags[(int) CollisionTag.Player]))
         {
             velocity.x = -velocity.x;
             velocity.y = transform.position.y - other.transform.position.y;
             velocity = velocity.normalized;
+            PlayAudioClip(wallClip);
         }
+    }
+
+    private void PlayAudioClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }
