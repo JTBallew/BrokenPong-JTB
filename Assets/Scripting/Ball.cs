@@ -29,6 +29,9 @@ public class Ball : MonoBehaviour
         transform.Translate(velocity * speed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Resets the Ball to (0,0) and applies a random velocity
+    /// </summary>
     private void ResetBall()
     {
         transform.position = Vector2.zero;
@@ -56,6 +59,10 @@ public class Ball : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays an audio clip whenever the ball collides with another object
+    /// </summary>
+    /// <param name="clip">Whcih audio clip should be played</param>
     private void PlayAudioClip(AudioClip clip)
     {
         audioSource.clip = clip;

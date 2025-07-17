@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    /// <summary>
+    /// Increments the score of whichever player scored the most recent goal by 1
+    /// </summary>
+    /// <param name="playerType">Which player scored the goal</param>
     public static void IncrementScore(PlayerType playerType)
     {
         if (instance == null) return;

@@ -33,11 +33,19 @@ public class Paddle : MonoBehaviour
         input.Disable();
     }
 
+    /// <summary>
+    /// Updates the movement direction to positive or negative depending on the buttons pressed
+    /// </summary>
+    /// <param name="context">What buttons need to be pressed to provide an update</param>
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         movementDirection = context.ReadValue<float> ();
     }
 
+    /// <summary>
+    /// Sets the movement direction to 0 when no buttons are pressed
+    /// </summary>
+    /// <param name="context">What buttons should not be pressed to set the variable to 0</param>
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         movementDirection = 0;
