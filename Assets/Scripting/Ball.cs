@@ -5,8 +5,7 @@ public class Ball : MonoBehaviour
 {
     public enum CollisionTag
     {
-        ScoreWallRight,
-        ScoreWallLeft,
+        ScoreWall,
         BounceWall,
         Player
     }
@@ -37,9 +36,10 @@ public class Ball : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(tags[(int) CollisionTag.ScoreWallRight]))
+        if (other.CompareTag(tags[(int) CollisionTag.ScoreWall]))
         {
             ResetBall();
+            GameManager.IncrementScore(other.GetComponent<ScoreWall>().scoringPlayer);
         }
         else if (other.CompareTag(tags[(int) CollisionTag.BounceWall]))
         {
