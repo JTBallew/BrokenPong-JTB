@@ -2299,10 +2299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  goalTags:
-  - ScoreWallLeft
+  tags:
   - ScoreWallRight
-  borderTag: BounceWall
+  - ScoreWallLeft
+  - BounceWall
+  - Player
   audioSource: {fileID: 277591915}
   playerClip: {fileID: 8300000, guid: 89ac86caef9822742bf80949d63e7186, type: 3}
   scoreClip: {fileID: 8300000, guid: 60b1630540cc88449aaf70f2532ce857, type: 3}
